@@ -40,21 +40,15 @@ def cleanLabels(df, col_name):
     avg_gross = helper.mean(df[col_name].to_numpy())
     _data = df[col_name].to_numpy()
     for index,_ in enumerate(_data):
-        # print (_data[index])
         if _data[index] >= avg_gross:
             _data[index] = 3
-
         elif _data[index] >= (avg_gross - avg_gross/2):
             _data[index] = 2
         elif _data[index] >= avg_gross/2:
             _data[index] = 1
         else:
             _data[index] = 0
-
-
-
     df[col_name] = _data
-
     return df
 
 
